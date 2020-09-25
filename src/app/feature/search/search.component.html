@@ -1,0 +1,26 @@
+
+<div class="search">
+
+    <div class="row">
+        <div class="col-1"></div>
+
+        <!-- MAin content div // -->
+        <div class="col-3">
+
+            <div class="search_greeting mt-30">Welcome {{ userDetails?.username}}</div>
+            <div class="mt-20">
+                <button mat-raised-button color="primary" (click)="openSearchPanel()">Explore Destination</button>
+            </div>
+
+            <div class="mt-40" *ngIf="searchPanelVisible">  
+                <app-search-option></app-search-option>
+                <app-search-result></app-search-result>
+            </div>
+        </div>
+
+        <!-- Right sidebar // -->
+        <div class="col-1"></div>
+    </div>
+
+
+</div>

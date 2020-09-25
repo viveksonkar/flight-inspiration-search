@@ -1,0 +1,33 @@
+<div class="row flight item-middle">
+    <div class="col-3">
+        <div class="row">
+            <div class="col-1">
+                <i class="fas fa-plane-departure mr-30"></i>
+                {{ flight.origin }} - {{ flight.destination }}
+            </div>
+            <div class="col-1">  {{ flight.departureDate }}</div>
+        </div>
+        
+        <div class="row mt-20">
+            <div class="col-1">
+                <i class="fas fa-plane-arrival mr-30"></i>
+                {{ flight.destination }} - {{ flight.origin }}
+            </div>
+            <div class="col-1">{{ flight.returnDate }}</div>
+        </div>
+    </div>
+
+    <div class="col-1">
+        <div class="row">
+            <div class="col-1">
+                <div class="flight_price">{{ flight.price.total}} Kr.</div>
+            </div>
+            <div class="col-1">
+                <div><button mat-button color="accent" [routerLink]="[flight.links.flightDates]">Flight Date</button></div>
+                <div>
+                    <button mat-raised-button color="accent" [routerLink]="[flight.links.flightOffers]">View Flight offers</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

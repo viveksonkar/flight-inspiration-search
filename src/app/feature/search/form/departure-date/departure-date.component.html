@@ -1,0 +1,5 @@
+<mat-form-field>
+    <input matInput [matDatepicker]="journeyType" (dateChange)="onSelected($event)" [min]="minDate" #endValue placeholder="Departure date" readonly>
+    <mat-datepicker-toggle matSuffix [for]="journeyType"></mat-datepicker-toggle>
+    <mat-datepicker #journeyType></mat-datepicker>
+</mat-form-field>

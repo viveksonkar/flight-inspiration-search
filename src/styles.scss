@@ -1,1 +1,136 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+@mixin display-flex{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin flex-grow($grow-size){
+    -webkit-flex-grow: $grow-size;
+    -moz-flex-grow: $grow-size;
+    -ms-flex-grow: $grow-size;
+    flex-grow: $grow-size;
+    -webkit-flex-grow: $grow-size;
+    -moz-flex-grow: $grow-size;
+    -ms-flex-grow: $grow-size;
+    flex-basis: 100*$grow-size;    
+}
+
+.row{
+    @include display-flex;
+    justify-content: center;
+    justify-content: center;
+}
+
+
+.col-1{
+    @include flex-grow(1);
+}
+.col-2{
+    @include flex-grow(2);
+}
+.col-3{
+    @include flex-grow(3);
+}
+.col-4{
+    @include flex-grow(4);
+}
+
+body{
+    background: rgba($color: #000000, $alpha: 0.4) url('./assets/img/home_background.jpg') center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+.header{
+    background-color: #130026!important;
+    height: 50px;
+    &_brand{
+        font-size: 32px;
+        line-height: 48px;
+        color: white;
+        font-weight: bold;
+    }
+    &_logout{
+        margin-top: 10px; 
+    }
+}
+
+.footer{
+    height: 50px;
+    align-items: center;
+    background: #130026;
+    color: white;
+}
+
+.main{
+    //min-height: 80vh;
+    min-height: calc(100% - 100px);
+    align-items: center;
+    &_center{
+        text-align: center;
+    }
+}
+
+.search{
+    &_greeting{
+        font-size: 48px;
+        line-height: 56px;
+        font-weight: bold;
+        color: white;
+    }
+    &_form{
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 8px;
+        box-shadow: 0 0 8px -5px #000000;
+    }
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mt-30{
+    margin-top: 30px;
+}
+
+.mt-40{
+    margin-top: 40px;
+}
+
+.mr-30{
+    margin-right: 30px;
+}
+
+.ml-30{
+    margin-right: 30px;
+}
+
+.pull-rt{
+    text-align: right;
+}
+
+.item-middle{
+    align-items: center;
+}
+
+.flight{
+    &_price{
+        font-size: 32px;
+        line-height: 64px;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,7 @@
+<mat-form-field appearance="fill">
+    <mat-label>Journey Type</mat-label>
+    <mat-select [(value)]="selected" (selectionChange)="selectionChange($event)">
+      <mat-option value="oneway">One Way</mat-option>
+      <mat-option value="return">Return</mat-option>
+    </mat-select>
+  </mat-form-field>
