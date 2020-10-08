@@ -25,7 +25,7 @@ export class MaxPriceComponent implements OnInit {
   }
 
   sliderChanges( matSliderChange: MatSliderChange){
-    this.searchService.maxPrice = Math.round(matSliderChange.value / 1000);
+    this.searchService.maxPrice = Math.round(matSliderChange.value / 1000)*1000;
     this.sliderValue = this.searchService.maxPrice + 'K';
   }
 

@@ -4,6 +4,7 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import * as _moment from 'moment';
 import { DATE_FORMATS } from 'src/app/app-date-format';
 import { SearchService } from 'src/app/feature/search.service';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-departure-date',
@@ -17,7 +18,7 @@ import { SearchService } from 'src/app/feature/search.service';
 })
 export class DepartureDateComponent implements OnInit {
 
-  @Input() selected: _moment.Moment;
+  @Input() selected: any;
   @Input() minDate: _moment.Moment;
 
   constructor(private searchService: SearchService) { }
@@ -29,9 +30,9 @@ export class DepartureDateComponent implements OnInit {
    * onSelected() - Method which emits the date on selection
    * @param event
    */
-  onSelected(event: _moment.Moment) {
+  onSelected(event: any) {
     this.selected = event;
-    this.searchService.departureDate = this.selected;
+    this.searchService.departureDate = this.selected.value;
   }
 
 }

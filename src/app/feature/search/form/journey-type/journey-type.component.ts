@@ -16,6 +16,7 @@ export class JourneyTypeComponent implements OnInit {
   constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
+    this.searchService.oneWay = this.oneWay;
   }
 
   selectionChange(matSelectChange: MatSelectChange){

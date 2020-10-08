@@ -22,10 +22,10 @@ export class FlightInspirationService {
    */
   exploreDestinationsForOrigin(origin: string): Observable<FlightInpirationResponse>{
     // Commenting as InspirationService is returning 500 currently. On 23-September it was working fine
-    /* return this._http.get<FlightInpirationResponse>(`${environment.flightInspirationSearch}?origin=${origin}`)
-      .pipe(map(response => response)); */
-      return this._http.get<FlightInpirationResponse>(environment.flightInspirationSearch)
-      .pipe(map(response => response)); 
+    return this._http.get<FlightInpirationResponse>(`${environment.flightInspirationSearch}?origin=${origin}`)
+      .pipe(map(response => response));
+      /* return this._http.get<FlightInpirationResponse>(environment.flightInspirationSearch)
+      .pipe(map(response => response));  */
   }
 
   /**
@@ -36,8 +36,9 @@ export class FlightInspirationService {
    * @param maxPrice 
    */
   multiparameterSearch(origin: string, departureDate: moment.Moment, oneWay: boolean, maxPrice: number): Observable<FlightInpirationResponse>{
-      return this._http.get<FlightInpirationResponse>(`${environment.flightInspirationSearch}
-            ?origin=${origin}&departureDate=${departureDate.format(APP_DATE_FORMAT.YYYYMMDD)}&oneWay=${oneWay}&maxPrice=${maxPrice}`)
+      return this._http.get<FlightInpirationResponse>(`${environment.flightInspirationSearch}?origin=${origin}&departureDate=${departureDate?.format(APP_DATE_FORMAT.YYYYMMDD)}&oneWay=${oneWay}&maxPrice=${maxPrice}`)
       .pipe(map(response => response)); 
+      /* return this._http.get<FlightInpirationResponse>(`${environment.flightInspirationSearch}?origin=${origin}&maxPrice=${maxPrice}`)
+      .pipe(map(response => response)); */ 
   }
 }

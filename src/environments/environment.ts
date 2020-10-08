@@ -11,8 +11,8 @@ export const environment = {
 
   accessTokenUrl: 'https://test.api.amadeus.com/v1/security/oauth2/token',
 
-  //flightInspirationSearch: 'https://test.api.amadeus.com/v1/shopping/flight-destinations',
-  flightInspirationSearch: './mock/insipiration-search.json'
+  flightInspirationSearch: 'https://test.api.amadeus.com/v1/shopping/flight-destinations',
+  //flightInspirationSearch: './mock/insipiration-search.json'
 
 };
 
